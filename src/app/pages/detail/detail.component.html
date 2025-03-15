@@ -1,0 +1,38 @@
+<!-- <div *ngIf="this.lineChartDataTable[0].series.length > 0" class="lineChart"> -->
+<div class="lineChart">
+  <div class="pageTitle">
+    <h2>{{ countryName }}</h2>
+  </div>
+
+  <div class="joInfoContainer">
+    <div class="joInfoContainer_info">
+      <div class="joInfoContainer_info_title">Number of Entries</div>
+      <div class="joInfoContainer_info_number">
+        {{ this.countryDetail?.participations?.length }}
+      </div>
+    </div>
+
+    <div class="joInfoContainer_info">
+      <div class="joInfoContainer_info_title">Total number medals</div>
+      <div class="joInfoContainer_info_number">{{ this.medals }}</div>
+    </div>
+
+    <div class="joInfoContainer_info">
+      <div class="joInfoContainer_info_title">Total number of athletes</div>
+      <div class="joInfoContainer_info_number">{{ this.athletes }}</div>
+    </div>
+  </div>
+
+  <div class="chart">
+    <ngx-charts-line-chart
+      [view]="view"
+      [showXAxisLabel]="showXAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [timeline]="timeline"
+      [results]="this.lineChartDataTable"
+    >
+    </ngx-charts-line-chart>
+  </div>
+</div>

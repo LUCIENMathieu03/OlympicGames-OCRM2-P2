@@ -1,17 +1,35 @@
-<h2>Olympic games app</h2>
+<!-- <h2>Olympic games app</h2>
 <hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<p>{{ (olympics$ | async)?.length }} data loaded</p> -->
 
 <div *ngIf="pieChartData.length > 0" class="pieChart">
-  <h2>Répartition des Médailles Olympiques</h2>
+  <div class="pieChart_title pageTitle"><h2>Medals per Country</h2></div>
+
+  <div class="joInfoContainer">
+    <div class="joInfoContainer_info">
+      <div class="joInfoContainer_info_title">Number of JOs</div>
+      <div class="joInfoContainer_info_number">
+        {{ this.nbJO.length }}
+      </div>
+    </div>
+
+    <div class="joInfoContainer_info">
+      <div class="joInfoContainer_info_title">Number of countries</div>
+      <div class="joInfoContainer_info_number">
+        {{ this.countries.length }}
+      </div>
+    </div>
+  </div>
 
   <ngx-charts-pie-chart
     [results]="pieChartData"
-    [legend]="showLegend"
+    [legend]="false"
     [labels]="showLabels"
     [explodeSlices]="explodeSlices"
     [doughnut]="doughnut"
     [animations]="true"
+    (select)="onCountryClick($event)"
+    class="pieChartComponent"
   >
   </ngx-charts-pie-chart>
 </div>
