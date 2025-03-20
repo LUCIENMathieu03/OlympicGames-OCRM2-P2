@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+.pageTitle {
+  display: flex;
+  justify-content: center;
+
+  & h2 {
+    color: white;
+    width: fit-content;
+    padding: 20px;
+    background-color: #02838f;
+    border-radius: 20px;
+  }
+}
+
+.joInfoContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  &_info {
+    padding: 20px;
+    border: #02838f 2px solid;
+    border-radius: 20px;
+    margin: 0px 20px;
+    min-width: 70px;
+    text-align: center;
+
+    &_title {
+      color: grey;
+    }
+    &_number {
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .joInfoContainer {
+    &_info {
+      padding: 15px;
+      margin: 0px 5px;
+    }
+  }
+}
