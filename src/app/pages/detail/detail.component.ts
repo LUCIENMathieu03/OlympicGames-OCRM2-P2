@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
   }[];
 
   //paramettre du line chart
-  view: [number, number] = [700, 300];
+
   legend: boolean = true;
   showLabels: boolean = true;
   animations: boolean = true;
