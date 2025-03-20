@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { OlympicCountry } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
@@ -80,33 +80,4 @@ export class HomeComponent {
       return true;
     });
   }
-
-  // pieChartData!: { name: string; value: number }[];
-  // countries!: string[];
-  // nbJO!: { city: string; year: Number }[];
-
-  // ngOnInit(): void {
-  //   // this.olympics$ = this.olympicService.getOlympics();
-  //   // this.pieChartData = [];
-  //   // this.countries = [];
-  //   // this.nbJO = [];
-  //   // this.olympics$.subscribe((dataTable) => {
-  //   //   // console.log(dataTable);
-  //   //   //preparation des donnée pour le pie chart
-  //   //   dataTable?.forEach((data) => {
-  //   //     let nbMedal = 0;
-  //   //     data.participations.forEach((participation) => {
-  //   //       nbMedal += participation.medalsCount;
-  //   //       this.nbJO.push({
-  //   //         city: participation.city,
-  //   //         year: participation.year,
-  //   //       });
-  //   //     });
-  //   //     const dataValue = { name: data.country, value: nbMedal };
-  //   //     this.pieChartData.push(dataValue);
-  //   //     this.countries.push(data.country);
-  //   //   });
-  //   //   this.nbJO = this.nbJOcheck(this.nbJO); //retire les doublons
-  //   // });
-  // }
 }

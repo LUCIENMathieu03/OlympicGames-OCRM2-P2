@@ -7,19 +7,22 @@
   <div class="joInfoContainer">
     <div class="joInfoContainer_info">
       <div class="joInfoContainer_info_title">Number of Entries</div>
-      <div class="joInfoContainer_info_number">
-        {{ this.countryDetail?.participations?.length }}
+      <div
+        class="joInfoContainer_info_number"
+        *ngIf="countryDetail$ | async as countryDetail"
+      >
+        {{ countryDetail?.participations?.length }}
       </div>
     </div>
 
     <div class="joInfoContainer_info">
       <div class="joInfoContainer_info_title">Total number medals</div>
-      <div class="joInfoContainer_info_number">{{ this.medals }}</div>
+      <div class="joInfoContainer_info_number">{{ medals$ | async }}</div>
     </div>
 
     <div class="joInfoContainer_info">
       <div class="joInfoContainer_info_title">Total number of athletes</div>
-      <div class="joInfoContainer_info_number">{{ this.athletes }}</div>
+      <div class="joInfoContainer_info_number">{{ athletes$ | async }}</div>
     </div>
   </div>
 
@@ -30,7 +33,7 @@
       [yAxis]="yAxis"
       [xAxisLabel]="xAxisLabel"
       [timeline]="timeline"
-      [results]="this.lineChartDataTable"
+      [results]="lineChartDataTable$ | async"
     >
     </ngx-charts-line-chart>
   </div>
