@@ -4,11 +4,12 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 import { OlympicCountry } from 'src/app/core/models/Olympic';
 import { Observable, of } from 'rxjs';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [NgxChartsModule],
+  imports: [NgxChartsModule, RouterLink],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss',
 })
