@@ -2,6 +2,7 @@
 .pageTitle {
   display: flex;
   justify-content: center;
+
   & h2 {
     color: white;
     width: fit-content;
@@ -29,6 +30,14 @@
     }
     &_number {
       font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .joInfoContainer {
+    &_info {
+      padding: 15px;
     }
   }
 }

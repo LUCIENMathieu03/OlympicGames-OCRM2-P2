@@ -16,6 +16,14 @@ export class HomeComponent {
   explodeSlices = false;
   doughnut = false;
 
+  tooltipText = ({
+    data,
+  }: {
+    data: { name: string; value: number };
+  }): string => {
+    return `<span class="custom-tooltip">${data.name} <br> 🏅${data.value}</span>`;
+  };
+
   public olympics$: Observable<OlympicCountry[] | undefined | null> =
     this.olympicService.getOlympics();
 

@@ -2,7 +2,7 @@
   *ngIf="((pieChartData$ | async) || []).length > 0; else loading"
   class="pieChart"
 >
-  <div class="pieChart_title pageTitle"><h2>Medals per Country</h2></div>
+  <div class="pageTitle"><h2>Medals per Country</h2></div>
 
   <div class="joInfoContainer">
     <div class="joInfoContainer_info">
@@ -20,17 +20,19 @@
     </div>
   </div>
 
-  <ngx-charts-pie-chart
-    [results]="pieChartData$ | async"
-    [legend]="false"
-    [labels]="showLabels"
-    [explodeSlices]="explodeSlices"
-    [doughnut]="doughnut"
-    [animations]="true"
-    (select)="onCountryClick($event)"
-    class="pieChartComponent"
-  >
-  </ngx-charts-pie-chart>
+  <div class="chart-container">
+    <ngx-charts-pie-chart
+      [results]="pieChartData$ | async"
+      [legend]="false"
+      [labels]="showLabels"
+      [explodeSlices]="explodeSlices"
+      [doughnut]="doughnut"
+      [animations]="true"
+      [tooltipText]="tooltipText"
+      (select)="onCountryClick($event)"
+      class="pieChartComponent"
+    />
+  </div>
 </div>
 
 <ng-template #loading>

@@ -5,9 +5,24 @@
   align-items: center;
 
   margin: auto;
-  width: 900px;
 
-  .pieChartComponent {
+  .chart-container {
+    width: 800px;
     height: 500px;
+
+    .pie-label {
+      font-size: large !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pieChart {
+    font-size: 15px;
+
+    .chart-container {
+      width: 100%;
+      height: 400px;
+    }
   }
 }
