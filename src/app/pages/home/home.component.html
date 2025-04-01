@@ -28,10 +28,19 @@
       [explodeSlices]="explodeSlices"
       [doughnut]="doughnut"
       [animations]="true"
-      [tooltipText]="tooltipText"
       (select)="onCountryClick($event)"
       class="pieChartComponent"
-    />
+    >
+      <ng-template #tooltipTemplate let-model="model" class="pieChartTooltip">
+        <!-- <ng-template #tooltipTemplate #customTooltip let-model="model" class="pieChartTooltip"> -->
+        <div class="tooltip tooltipTemplate">
+          {{ model.name }}
+          <br />
+          🏅
+          {{ model.value }}
+        </div>
+      </ng-template>
+    </ngx-charts-pie-chart>
   </div>
 </div>
 
