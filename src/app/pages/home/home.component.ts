@@ -46,6 +46,14 @@ export class HomeComponent {
       })
     );
 
+  //afin de montrer qu'es ce qui ce passe quand on a pas de valeur
+  // public pieChartData$: Observable<{ name: string; value: number }[]> =
+  //   this.olympics$.pipe(
+  //     map((olympicTable) => {
+  //       return [];
+  //     })
+  //   );
+
   public countries$: Observable<string[]> = this.olympics$.pipe(
     map((olympicTable) => {
       if (!olympicTable) return [];
@@ -55,12 +63,13 @@ export class HomeComponent {
 
   constructor(private olympicService: OlympicService, private router: Router) {}
 
-  onCountryClick(data: { name: string; value: number; label: string }) {
-    console.log(data);
+  onCountryClick(data: { name: string; value: number; label: string }): void {
     this.router.navigateByUrl(`detail/${data.name}`);
   }
 
-  nbJOcheck(nbJO: { city: string; year: Number }[]) {
+  nbJOcheck(
+    nbJO: { city: string; year: Number }[]
+  ): { city: string; year: Number }[] {
     const seen = new Set();
 
     return nbJO.filter((obj) => {
